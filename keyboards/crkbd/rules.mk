@@ -30,7 +30,7 @@ RGBLIGHT_ENABLE = no       # Enable WS2812 RGB underlight.
 WPM_ENABLE = yes
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
 SLEEP_LED_ENABLE = no    # Breathing sleep LED during USB suspend
-
+VIA_ENABLE = yes
 # if firmware size over limit, try this option
 # CFLAGS += -flto
 LAYOUTS = split_3x5_3 split_3x6_3
