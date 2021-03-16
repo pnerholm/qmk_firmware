@@ -5,10 +5,12 @@
 
 // in the future, should use (1U<<_LAYER_NAME) instead, but needs to be moved to keymap,c
 #define L_BASE 0
-#define L_LOWER 2
-#define L_RAISE 4
-#define L_ADJUST 8
-#define L_ADJUST_TRI 14
+#define L_NORWAY 2
+#define L_LOWER 4
+#define L_RAISE 8
+#define L_ADJUST 28
+//#define L_ADJUST_TRI 14
+extern bool defaultNorwegianLayer;
 
 char layer_state_str[24];
 
@@ -16,7 +18,11 @@ const char *read_layer_state(void) {
   switch (layer_state)
   {
   case L_BASE:
-    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Default");
+    if(defaultNorwegianLayer){
+      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Default NOR");
+    } else {
+      snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Default ENG");
+    }
     break;
   case L_RAISE:
     snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Raise");
@@ -25,8 +31,11 @@ const char *read_layer_state(void) {
     snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Lower");
     break;
   case L_ADJUST:
-  case L_ADJUST_TRI:
+  //case L_ADJUST_TRI:
     snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Adjust");
+    break;
+  case L_NORWAY:
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Norway");
     break;
   default:
     snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Undef-%ld", layer_state);

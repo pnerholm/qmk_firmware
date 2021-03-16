@@ -5,6 +5,11 @@ char keylog_str[24] = {};
 char keylogs_str[21] = {};
 int keylogs_str_idx = 0;
 
+//char debugLog_buf[63] = {};
+//char debugLog_str1[20] = {};
+//char debugLog_str2[20] = {};
+//char debugLog_str3[20] = {};
+
 const char code_to_name[60] = {
     ' ', ' ', ' ', ' ', 'a', 'b', 'c', 'd', 'e', 'f',
     'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
@@ -43,3 +48,19 @@ const char *read_keylog(void) {
 const char *read_keylogs(void) {
   return keylogs_str;
 }
+
+void setdebugLog_str1(const char *data){
+  //snprintf(debugLog_str1, sizeof(debugLog_str1), "%s",data);
+}
+void setdebugLog_str2(const char *data){
+  //snprintf(debugLog_str2, sizeof(debugLog_str2), "%s",data);
+}
+void setdebugLog_str3(const char *data){
+  //snprintf(debugLog_str3, sizeof(debugLog_str3), "%s",data);
+}
+
+//const char *read_debugLog(void) {
+
+  //snprintf(debugLog_buf, sizeof(debugLog_buf), "%s\n%s\n%s",debugLog_str1,debugLog_str2,debugLog_str3);
+  //return debugLog_buf;
+//}
